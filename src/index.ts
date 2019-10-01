@@ -24,15 +24,66 @@
  * SOFTWARE.
  */
 
-/**
- * A quick start template for Typescript.
- */
-export class TypeScriptQuickStart {
-    /**
-     * Your first method.
-     * @param text - The text to return
-    */
-    public helloWorld(text: string = ""): string {
-        return text
-    }
-}
+import parsePackages from "./utils/parsePackages"
+import { add, remove } from "./utils/pm"
+import search from "libnpmsearch"
+import installedTypes from "./utils/installedTypes"
+import chalk from "chalk"
+import _ from "lodash"
+import yaml from "js-yaml"
+import dot from "dot-prop"
+import npmFetch from "./utils/npmFetch"
+
+require('yargs')
+    .command('add [name]', 'add a typings package', (yargs) => {
+        yargs
+            .positional('name', {
+                describe: 'name of typings package'
+            })
+    }, (args) => {
+        add(parsePackages(args))
+    })
+    .command('remove [name]', 'remove a typings package', (yargs) => {
+        yargs
+            .positional('name', {
+                describe: 'name of typings package'
+            })
+    }, (args) => {
+        remove(parsePackages(args))
+    })
+    .command('search [name]', 'search for a typings package by name', (yargs) => {
+        yargs
+            .positional('name', {
+                describe: 'name of typings package'
+            })
+    }, (args) => {
+        installedTypes().then((installed: string[]) => search(`@types/${args.name}`, { limit: 5 })
+            .then(res => res.forEach(({ name, description }, i) => {
+                if (name.startsWith("@types/")) {
+                    const toLog = `${name.slice("@types/".length)}: ${_.truncate(description, {
+                        'length': 64
+                    })}`
+                    if (installed.includes(name)) console.log(chalk.grey(toLog))
+                    else if (i === 0) console.log(chalk.blue(toLog))
+                    else console.log(toLog)
+                }
+            }))
+        )
+    })
+    .command('info [name] [part]', 'retreive package info', (yargs) => {
+        yargs
+            .positional('name', {
+                describe: 'name of typings package'
+            })
+            .positional('part', {
+                describe: 'the part of the information to display',
+                default: 'all'
+            })
+    }, (args) => {
+        npmFetch(`/@types/${args.name}`).then((data: object) => {
+            if (args.part !== "all") data = dot.get(data, args.part)
+            console.log(yaml.safeDump(data))
+        })
+    })
+    .demandCommand()
+    .argv

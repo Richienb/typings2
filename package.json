@@ -1,12 +1,9 @@
 {
-    "name": "typescript-quickstart",
-    "description": "A quick start template for Typescript.",
+    "name": "typings2",
+    "description": "A familiar interface to install Typescript typings, adapted from the now deprecated typings package.",
     "keywords": [
-        "quickstart",
         "typescript",
-        "template",
-        "compiler",
-        "meta",
+        "typings",
         "node"
     ],
     "version": "0.0.0",
@@ -15,22 +12,48 @@
         "src/**/*",
         "dist/**/*"
     ],
-    "repository": "https://github.com/Richienb/typescript-quickstart.git",
+    "bin": {
+        "typings": "dist/index.js"
+    },
+    "repository": "https://github.com/Richienb/typings2.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "microbundle --target node --watch",
+        "dev": "yarn js --watch",
         "build": "yarn js && yarn docs",
-        "js": "microbundle --target node",
+        "js": "microbundle --target node --format cjs --external assert,stream,constants,util,bluebird,chalk,dot-prop,execa,find-cache-dir,fs-extra,js-yaml,libnpmsearch,lodash,npm-registry-fetch,yargs",
         "docs": "typedoc --out ./docs --mode file --target ES6 ./src",
         "lint": "eslint src/*"
     },
+    "dependencies": {
+        "bluebird": "^3.5.5",
+        "chalk": "^2.4.2",
+        "dot-prop": "^5.1.0",
+        "execa": "^2.0.4",
+        "find-cache-dir": "^3.0.0",
+        "fs-extra": "^8.1.0",
+        "js-yaml": "^3.13.1",
+        "libnpmsearch": "^2.0.2",
+        "lodash": "^4.17.15",
+        "npm-registry-fetch": "^4.0.1",
+        "yargs": "^14.0.0"
+    },
     "devDependencies": {
+        "@types/bluebird": "^3.5.27",
+        "@types/fs-extra": "^8.0.0",
+        "@types/js-yaml": "^3.12.1",
+        "@types/libnpmsearch": "^2.0.1",
+        "@types/lodash": "^4.14.141",
+        "@types/which-pm": "^1.0.0",
+        "@types/yargs": "^13.0.3",
         "@typescript-eslint/eslint-plugin": "^2.3.1",
+        "@typescript-eslint/parser": "^2.3.2",
         "eslint": "^6.4.0",
         "eslint-config-google": "^0.14.0",
         "microbundle": "^0.11.0",
-        "typedoc": "^0.15.0"
+        "type-fest": "^0.8.1",
+        "typedoc": "^0.15.0",
+        "which-pm": "^2.0.0"
     },
     "resolutions": {
         "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",

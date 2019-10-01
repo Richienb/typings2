@@ -1,34 +1,15 @@
-# Typescript QuickStart
+# Typings2 [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/typings2/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/typings2)
 
-A quick start template for Typescript.
+A familiar interface to install Typescript typings, adapted from the now deprecated typings package.
 
-[![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/typescript-quickstart/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/typescript-quickstart)
-[![CodeFactor Score](https://www.codefactor.io/repository/github/Richienb/typescript-quickstart/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/Richienb/typescript-quickstart)
+[![NPM](https://nodei.co/npm/typings2.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/typings2)
 
-[![NPM](https://nodei.co/npm/typescript-quickstart.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/typescript-quickstart)
+## Installation
 
-## Importing
+In NPM: `npm i -g typings2` or in yarn: `yarn global add typings2`.
 
-From your NodeJS application:
-
-```js
-const TypeScriptQuickStart = require("typescript-quickstart")
-```
-
-From your web application:
-
-```html
-<script src="https://unpkg.com/typescript-quickstart/dist/index.min.js"></script>
-```
-
-## Initialisation
-
-```js
-const TypeScriptQuickStart = new TypeScriptQuickStart()
-```
+If you're still using the old `typings`: `npm un typings` or in yarn: `yarn global remove typings`.
 
 ## Usage
 
-Read the [documentation](https://richienb.github.io/typescript-quickstart).
-
-> The typescript-quickstart npm module is not maintained by this project.
+To start, type `typings --help`
