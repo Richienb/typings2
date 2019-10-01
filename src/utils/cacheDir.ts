@@ -1,3 +1,8 @@
 import findCacheDir from "find-cache-dir"
 
-export default findCacheDir({ name: 'typings2' });
+/**
+* The cache directory.
+*/
+const cacheDir = findCacheDir({ name: "typings2" })
+
+export default cacheDir

@@ -3,6 +3,9 @@ import removeUnderscored from "./removeUnderscored"
 import _ from "lodash"
 import cacheDir from "./cacheDir"
 
-export default function npmFetch(url: string, opts?: Options): Promise<Record<string, unknown>> {
+/**
+* Fetch data from the NPM API.
+*/
+export default function npmFetch(url: string, opts?: Options): Promise<object | Record<string, unknown>> {
     return json(url, { cache: cacheDir, ...opts }).then((data: object) => Promise.resolve(_.pickBy(removeUnderscored(data))))
 }

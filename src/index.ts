@@ -34,34 +34,34 @@ import yaml from "js-yaml"
 import dot from "dot-prop"
 import npmFetch from "./utils/npmFetch"
 
-require('yargs')
-    .command('add [name]', 'add a typings package', (yargs) => {
+require("yargs")
+    .command("add [name]", "add a typings package", (yargs) => {
         yargs
-            .positional('name', {
-                describe: 'name of typings package'
+            .positional("name", {
+                describe: "name of typings package",
             })
     }, (args) => {
         add(parsePackages(args))
     })
-    .command('remove [name]', 'remove a typings package', (yargs) => {
+    .command("remove [name]", "remove a typings package", (yargs) => {
         yargs
-            .positional('name', {
-                describe: 'name of typings package'
+            .positional("name", {
+                describe: "name of typings package",
             })
     }, (args) => {
         remove(parsePackages(args))
     })
-    .command('search [name]', 'search for a typings package by name', (yargs) => {
+    .command("search [name]", "search for a typings package by name", (yargs) => {
         yargs
-            .positional('name', {
-                describe: 'name of typings package'
+            .positional("name", {
+                describe: "name of typings package",
             })
     }, (args) => {
         installedTypes().then((installed: string[]) => search(`@types/${args.name}`, { limit: 5 })
-            .then(res => res.forEach(({ name, description }, i) => {
+            .then((res) => res.forEach(({ name, description }, i) => {
                 if (name.startsWith("@types/")) {
                     const toLog = `${name.slice("@types/".length)}: ${_.truncate(description, {
-                        'length': 64
+                        "length": 64,
                     })}`
                     if (installed.includes(name)) console.log(chalk.grey(toLog))
                     else if (i === 0) console.log(chalk.blue(toLog))
@@ -70,14 +70,14 @@ require('yargs')
             }))
         )
     })
-    .command('info [name] [part]', 'retreive package info', (yargs) => {
+    .command("info [name] [part]", "retreive package info", (yargs) => {
         yargs
-            .positional('name', {
-                describe: 'name of typings package'
+            .positional("name", {
+                describe: "name of typings package",
             })
-            .positional('part', {
-                describe: 'the part of the information to display',
-                default: 'all'
+            .positional("part", {
+                describe: "the part of the information to display",
+                default: "all",
             })
     }, (args) => {
         npmFetch(`/@types/${args.name}`).then((data: object) => {

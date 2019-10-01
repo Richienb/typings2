@@ -30,13 +30,3 @@ deploy:
       skip_cleanup: true
       on:
           tags: true
-
-    - provider: pages
-      skip_cleanup: true
-      github_commit: "Published documentation [skip ci]"
-      github_token: $github_token
-      name: "ROS Bot"
-      email: "richiebendall@gmail.com"
-      local_dir: docs
-      on:
-          tags: true

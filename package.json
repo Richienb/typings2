@@ -20,10 +20,9 @@
     "license": "MIT",
     "scripts": {
         "dev": "yarn js --watch",
-        "build": "yarn js && yarn docs",
-        "js": "microbundle --target node --format cjs --external assert,stream,constants,util,bluebird,chalk,dot-prop,execa,find-cache-dir,fs-extra,js-yaml,libnpmsearch,lodash,npm-registry-fetch,yargs",
-        "docs": "typedoc --out ./docs --mode file --target ES6 ./src",
-        "lint": "eslint src/*"
+        "build": "yarn js",
+        "js": "microbundle --target node --format cjs --no-sourcemap --external assert,stream,constants,util,bluebird,chalk,dot-prop,execa,find-cache-dir,fs-extra,js-yaml,libnpmsearch,lodash,npm-registry-fetch,yargs",
+        "lint": "eslint src --ext .ts"
     },
     "dependencies": {
         "bluebird": "^3.5.5",
@@ -52,7 +51,6 @@
         "eslint-config-google": "^0.14.0",
         "microbundle": "^0.11.0",
         "type-fest": "^0.8.1",
-        "typedoc": "^0.15.0",
         "which-pm": "^2.0.0"
     },
     "resolutions": {
