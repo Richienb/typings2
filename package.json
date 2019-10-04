@@ -14,7 +14,7 @@
     ],
     "preferGlobal": true,
     "bin": {
-        "typings": "./dist/index.js"
+        "typings": "dist/index.js"
     },
     "repository": "https://github.com/Richienb/typings2.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
