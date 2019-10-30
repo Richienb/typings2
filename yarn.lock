@@ -285,9 +285,11 @@
   integrity sha512-Sf5NnDETSFGTHXIfG4zTTczRFhGEjSCfwfvHZ5oFmyX0fUA5BJKV/hdQ2zDnfcC6WXvE78ZTh+/18VzMyMM1QQ==
 
 "@types/which-pm@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@types/which-pm/-/which-pm-1.0.0.tgz#cad1855daa9f2b5f6952655f217803bd0b17af96"
-  integrity sha512-Y50b9ARLjMBJvgN5iEwP+lQqJjTPaEBM61kTFkpfqzQjMKSxbksEobcw4CZsU6ZEzWfXgUy1EEYltcYdd9fdVw==
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@types/which-pm/-/which-pm-1.1.0.tgz#5d5e3c3859da546ef06d0cf8aa7942349bb75e31"
+  integrity sha512-348VyuXAPEF9bXEXmap88Rj4OezYGz7TdkcIyD2NakaOrR/Tqkc4XKlE//rA6oQESa9bGwKiAMczjO+vRouiQg==
+  dependencies:
+    which-pm "*"
 
 "@types/yargs-parser@*":
   version "13.1.0"
@@ -5487,7 +5489,7 @@ which-pm-runs@^1.0.0:
   resolved "https://registry.yarnpkg.com/which-pm-runs/-/which-pm-runs-1.0.0.tgz#670b3afbc552e0b55df6b7780ca74615f23ad1cb"
   integrity sha1-Zws6+8VS4LVd9rd4DKdGFfI60cs=
 
-which-pm@^2.0.0:
+which-pm@*, which-pm@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/which-pm/-/which-pm-2.0.0.tgz#8245609ecfe64bf751d0eef2f376d83bf1ddb7ae"
   integrity sha512-Lhs9Pmyph0p5n5Z3mVnN0yWcbQYUAD7rbQUiMsQxOJ3T57k7RFe35SUwWMf7dsbDZks1uOmw4AecB/JMDj3v/w==
