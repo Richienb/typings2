@@ -12,4 +12,4 @@ If you're still using the old `typings`: `npm un typings` or in yarn: `yarn glob
 
 ## Usage
 
-To start, type `typings --help`
+To start, type `typings`

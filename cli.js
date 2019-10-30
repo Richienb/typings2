@@ -24,17 +24,11 @@
  * SOFTWARE.
  */
 
-import parsePackages from "./utils/parsePackages"
-import { add, remove } from "./utils/pm"
-import search from "libnpmsearch"
-import installedTypes from "./utils/installedTypes"
-import chalk from "chalk"
-import _ from "lodash"
-import yaml from "js-yaml"
-import dot from "dot-prop"
-import npmFetch from "./utils/npmFetch"
+const parsePackages = require("./utils/parse-packages")
+const { add, remove, search, info } = require(".")
+const yargs = require("yargs")
 
-require("yargs")
+yargs
     .command("add [name]", "add a typings package", (yargs) => {
         yargs
             .positional("name", {
@@ -57,20 +51,9 @@ require("yargs")
                 describe: "name of typings package",
             })
     }, (args) => {
-        installedTypes().then((installed: string[]) => search(`@types/${args.name}`, { limit: 5 })
-            .then((res) => res.forEach(({ name, description }, i) => {
-                if (name.startsWith("@types/")) {
-                    const toLog = `${name.slice("@types/".length)}: ${_.truncate(description, {
-                        "length": 64,
-                    })}`
-                    if (installed.includes(name)) console.log(chalk.grey(toLog))
-                    else if (i === 0) console.log(chalk.blue(toLog))
-                    else console.log(toLog)
-                }
-            }))
-        )
+        search(args.name)
     })
-    .command("info [name] [part]", "retreive package info", (yargs) => {
+    .command("info [name] [part]", "retrieve package info", (yargs) => {
         yargs
             .positional("name", {
                 describe: "name of typings package",
@@ -80,10 +63,7 @@ require("yargs")
                 default: "all",
             })
     }, (args) => {
-        npmFetch(`/@types/${args.name}`).then((data: object) => {
-            if (args.part !== "all") data = dot.get(data, args.part)
-            console.log(yaml.safeDump(data))
-        })
+        info(args.name, args.part)
     })
     .demandCommand()
     .argv
