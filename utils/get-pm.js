@@ -1,5 +1,4 @@
 const whichpm = require("which-pm")
-const Promise = require("bluebird")
 const toBluebird = require("to-bluebird")
 
 /**

@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * @license
  *
@@ -27,6 +28,9 @@
 const parsePackages = require("./utils/parse-packages")
 const { add, remove, search, info } = require(".")
 const yargs = require("yargs")
+const yaml = require("js-yaml")
+const _ = require("lodash")
+const chalk = require("chalk")
 
 yargs
     .command("add [name]", "add a typings package", (yargs) => {
@@ -51,7 +55,17 @@ yargs
                 describe: "name of typings package",
             })
     }, (args) => {
-        search(args.name)
+        search(args.name).then((res) => {
+            if (_.size(res) > 0) {
+                return _.forEach(res, ({ name, description, status }) => {
+                    const toLog = `${name}: ${description}`
+                    if (status === "installed") console.log(chalk.grey(toLog))
+                    else if (status === "recommended") console.log(chalk.green(toLog))
+                    else if (status === "relevant") console.log(chalk.blue(toLog))
+                    else console.log(toLog)
+                })
+            } else return console.log("No results found!")
+        })
     })
     .command("info [name] [part]", "retrieve package info", (yargs) => {
         yargs
@@ -63,7 +77,7 @@ yargs
                 default: "all",
             })
     }, (args) => {
-        info(args.name, args.part)
+        info(args.name, args.part).then((data) => console.log(yaml.safeDump(data)))
     })
     .demandCommand()
     .argv

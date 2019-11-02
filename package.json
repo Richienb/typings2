@@ -28,28 +28,28 @@
         "bluebird": "^3.5.5",
         "braces": "^3.0.2",
         "chalk": "^2.4.2",
-        "dot-prop": "^5.1.1",
+        "convert-typing-name": "^1.0.1",
+        "dot-prop": "^5.2.0",
         "execa": "^3.2.0",
-        "find-cache-dir": "^3.0.0",
-        "find-pkg-cache": "^1.0.0",
-        "fs-extra": "^8.1.0",
+        "fetch-nice-package": "^1.0.2",
         "js-yaml": "^3.13.1",
         "libnpmsearch": "^2.0.2",
         "lodash": "^4.17.15",
-        "npm-registry-fetch": "^5.0.0",
+        "pkg-conf": "^3.1.0",
+        "remove-markdown": "^0.3.0",
         "to-bluebird": "^1.0.2",
         "which-pm": "^2.0.0",
         "yargs": "^14.0.0"
     },
     "devDependencies": {
         "eslint": "^6.6.0",
-        "eslint-config-richienb": "^0.2.0"
+        "eslint-config-richienb": "^0.2.2"
     },
     "resolutions": {
         "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",
         "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.0"
     },
     "eslintConfig": {
-        "extends": "richienb/ts"
+        "extends": "richienb/node"
     }
 }

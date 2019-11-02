@@ -1,11 +1,11 @@
-import Bluebird from "bluebird"
+import Promise from "bluebird"
 
 /**
 * Install a package.
 */
-export function add(name: string): Bluebird<NodeJS.WriteStream>
+export function add(name: string): Promise<NodeJS.WriteStream>
 
 /**
 * Uninstall a package.
 */
-export function remove(name: string): Bluebird<NodeJS.WriteStream>
+export function remove(name: string): Promise<NodeJS.WriteStream>

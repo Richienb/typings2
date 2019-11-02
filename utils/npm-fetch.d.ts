@@ -1,8 +1,8 @@
-import { Options as RegistryOptions } from "npm-registry-fetch"
+import Promise from "bluebird"
 
 /**
 * Fetch data from the NPM API.
 */
-declare function npmFetch(url: string, opts?: RegistryOptions): Promise<object | Record<string, unknown>>
+declare function npmFetch(name: string): Promise<object>
 
 export = npmFetch
