@@ -33,6 +33,8 @@ const _ = require("lodash")
 const chalk = require("chalk")
 
 yargs
+    .scriptName("typings")
+    .usage('$0 <cmd> [args?]')
     .command("add [name]", "add a typings package", (yargs) => {
         yargs
             .positional("name", {

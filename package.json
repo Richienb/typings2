@@ -6,7 +6,7 @@
         "typings",
         "node"
     ],
-    "version": "0.0.0",
+    "version": "1.0.0",
     "main": "index.js",
     "files": [
         "lib/**/*",
@@ -26,7 +26,6 @@
     },
     "dependencies": {
         "bluebird": "^3.5.5",
-        "braces": "^3.0.2",
         "chalk": "^2.4.2",
         "convert-typing-name": "^1.0.1",
         "dot-prop": "^5.2.0",
@@ -44,10 +43,6 @@
     "devDependencies": {
         "eslint": "^6.6.0",
         "eslint-config-richienb": "^0.2.2"
-    },
-    "resolutions": {
-        "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",
-        "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.0"
     },
     "eslintConfig": {
         "extends": "richienb/node"
