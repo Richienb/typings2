@@ -26,7 +26,7 @@
     },
     "dependencies": {
         "bluebird": "^3.5.5",
-        "chalk": "^2.4.2",
+        "chalk": "^3.0.0",
         "convert-typing-name": "^1.0.1",
         "dot-prop": "^5.2.0",
         "execa": "^3.2.0",
