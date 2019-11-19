@@ -38,7 +38,7 @@
         "remove-markdown": "^0.3.0",
         "to-bluebird": "^1.0.2",
         "which-pm": "^2.0.0",
-        "yargs": "^14.0.0"
+        "yargs": "^15.0.2"
     },
     "devDependencies": {
         "eslint": "^6.6.0",
