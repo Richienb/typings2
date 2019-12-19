@@ -29,7 +29,7 @@
         "chalk": "^2.4.2",
         "convert-typing-name": "^1.0.1",
         "dot-prop": "^5.2.0",
-        "execa": "^3.2.0",
+        "execa": "^4.0.0",
         "fetch-nice-package": "^1.0.2",
         "js-yaml": "^3.13.1",
         "libnpmsearch": "^2.0.2",
