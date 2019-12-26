@@ -1,5 +1,4 @@
 import whichpm from "which-pm"
-import Promise from "bluebird"
 
 /**
 * Get the current package manager name.

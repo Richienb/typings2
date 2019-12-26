@@ -1,5 +1,3 @@
-import Promise from "bluebird"
-
 /**
 * Get the currently installed types packages.
 */

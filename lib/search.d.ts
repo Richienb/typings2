@@ -1,6 +1,4 @@
-import Promise from "bluebird"
-
-interface SearchResults {
+declare interface SearchResults {
     [key: string]: "installed" | "recommended" | "relevant" | "other"
 }
 

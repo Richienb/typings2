@@ -1,5 +1,3 @@
-import Promise from "bluebird"
-
 /**
 * Fetch data from the NPM API.
 */

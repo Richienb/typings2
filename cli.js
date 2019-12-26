@@ -31,6 +31,7 @@ const yargs = require("yargs")
 const yaml = require("js-yaml")
 const _ = require("lodash")
 const chalk = require("chalk")
+const humanizeList = require("humanize-list")
 
 yargs
     .scriptName("typings")
@@ -40,16 +41,20 @@ yargs
             .positional("name", {
                 describe: "name of typings package",
             })
-    }, (args) => {
-        add(parsePackages(args))
+    }, async (args) => {
+        const pkgs = parsePackages(args)
+        console.log(`Adding ${humanizeList(pkgs)}...`);
+        (await add(pkgs.join(" "))).stdout.pipe(process.stdout)
     })
     .command("remove [name]", "remove a typings package", (yargs) => {
         yargs
             .positional("name", {
                 describe: "name of typings package",
             })
-    }, (args) => {
-        remove(parsePackages(args))
+    }, async (args) => {
+        const pkgs = parsePackages(args)
+        console.log(`Removing ${humanizeList(pkgs)}...`);
+        (await remove(pkgs.join(" "))).stdout.pipe(process.stdout)
     })
     .command("search [name]", "search for a typings package by name", (yargs) => {
         yargs

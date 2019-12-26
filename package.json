@@ -18,6 +18,9 @@
     "bin": {
         "typings": "cli.js"
     },
+    "engines": {
+        "node": ">=10"
+    },
     "repository": "https://github.com/Richienb/typings2.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
@@ -25,24 +28,24 @@
         "lint": "eslint ."
     },
     "dependencies": {
-        "bluebird": "^3.5.5",
-        "chalk": "^2.4.2",
+        "@sindresorhus/is": "^1.2.0",
+        "chalk": "^3.0.0",
         "convert-typing-name": "^1.0.1",
         "dot-prop": "^5.2.0",
-        "execa": "^3.2.0",
+        "execa": "^4.0.0",
         "fetch-nice-package": "^1.0.2",
+        "humanize-list": "^1.0.1",
         "js-yaml": "^3.13.1",
         "libnpmsearch": "^2.0.2",
         "lodash": "^4.17.15",
         "pkg-conf": "^3.1.0",
         "remove-markdown": "^0.3.0",
-        "to-bluebird": "^1.0.2",
         "which-pm": "^2.0.0",
-        "yargs": "^14.0.0"
+        "yargs": "^15.0.2"
     },
     "devDependencies": {
-        "eslint": "^6.6.0",
-        "eslint-config-richienb": "^0.2.2"
+        "eslint": "^6.8.0",
+        "eslint-config-richienb": "^0.2.3"
     },
     "eslintConfig": {
         "extends": "richienb/node"
