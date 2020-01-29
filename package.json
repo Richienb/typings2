@@ -28,7 +28,7 @@
         "lint": "eslint ."
     },
     "dependencies": {
-        "@sindresorhus/is": "^1.2.0",
+        "@sindresorhus/is": "^2.0.0",
         "chalk": "^3.0.0",
         "convert-typing-name": "^1.0.1",
         "dot-prop": "^5.2.0",
