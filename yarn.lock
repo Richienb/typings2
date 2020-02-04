@@ -364,14 +364,13 @@ contains-path@^0.1.0:
   resolved "https://registry.yarnpkg.com/contains-path/-/contains-path-0.1.0.tgz#fe8cf184ff6670b6baef01a9d4861a5cbec4120a"
   integrity sha1-/ozxhP9mcLa67wGp1IYaXL7EEgo=
 
-convert-typing-name@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/convert-typing-name/-/convert-typing-name-1.0.1.tgz#334b931a9f17628f86fe31543c7aaaaf4465611b"
-  integrity sha512-0dBdmb+EhWIYa7lMmiUKQVyjY1R02tzqNdyH5HcqYcweGVh+X3gPipg6mYOO8P0f4Uuk/YlJRozWYN7tqOOwjA==
+convert-typing-name@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/convert-typing-name/-/convert-typing-name-2.0.0.tgz#49d5e96738dbb683d11dd8c9504f1f6ef4793162"
+  integrity sha512-9AaJ0dl/4JusGLlrn40gkwOZyiTB5h10bjD3ETlnMZKmzDjl8lt21m72pGtuSG3C6/YvhQ2hRakUe3Bn1eM58g==
   dependencies:
-    lodash "^4.17.15"
-    named-regexp-groups "^1.0.5"
-    parse-pkg-name "^1.0.0"
+    ow "^0.15.1"
+    parse-pkg-name "^2.0.0"
 
 copy-concurrently@^1.0.0:
   version "1.0.5"
@@ -1518,11 +1517,6 @@ mute-stream@0.0.8:
   resolved "https://registry.yarnpkg.com/mute-stream/-/mute-stream-0.0.8.tgz#1630c42b2251ff81e2a283de96a5497ea92e5e0d"
   integrity sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==
 
-named-regexp-groups@^1.0.5:
-  version "1.0.5"
-  resolved "https://registry.yarnpkg.com/named-regexp-groups/-/named-regexp-groups-1.0.5.tgz#14d1e45c2dfa6e0d7359265509f8305a5e02a1ba"
-  integrity sha512-oK8TaLTXw4dIUOvbxGAO+OZf8b+69DZgcZMbbfTX6GCzjm4vcc+8VrdZoHpttdJTVeuCV3aQVjKfv7k8Q5SLSg==
-
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
@@ -1681,6 +1675,13 @@ osenv@^0.1.5:
     os-homedir "^1.0.0"
     os-tmpdir "^1.0.0"
 
+ow@^0.15.1:
+  version "0.15.1"
+  resolved "https://registry.yarnpkg.com/ow/-/ow-0.15.1.tgz#ad21bb4d4c46d4478b948522e36b214f6f13039d"
+  integrity sha512-rwiuvCnk3Ug9T4s5oKzw3QXQSiTXlTUiQgHmZ9Ozw/37YzeX8LycosVKOtO3v5+fuARGmCgz9rVhaBJeGV+2bQ==
+  dependencies:
+    type-fest "^0.8.1"
+
 p-limit@^1.1.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/p-limit/-/p-limit-1.3.0.tgz#b86bd5f0c25690911c7590fcbfc2010d54b3ccb8"
@@ -1772,12 +1773,12 @@ parse-package-name@^0.1.0:
   resolved "https://registry.yarnpkg.com/parse-package-name/-/parse-package-name-0.1.0.tgz#3f44dd838feb4c2be4bf318bae4477d7706bade4"
   integrity sha1-P0Tdg4/rTCvkvzGLrkR313BrreQ=
 
-parse-pkg-name@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/parse-pkg-name/-/parse-pkg-name-1.0.0.tgz#5e8ca54fa94077e68d4c89af422e7bf143783478"
-  integrity sha512-biDKhtz+mewRS7L7vkVOb1ru2I8VGDLHSlMFQ33D5qjfiI8RxdwEOyyAa7OLcNspK3cRxgCgs9kY18yFTKXxRw==
+parse-pkg-name@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/parse-pkg-name/-/parse-pkg-name-2.0.0.tgz#371086cd9bf03a8986bee56763cb2ec7f53024f0"
+  integrity sha512-jlikWandLTJEXOhr55uSnHfvnMUSW9g5PxWpkRt6mmuhdH9CfeJfnjJB97j7p9b7gCsJP1y78BovTF8dLjvoog==
   dependencies:
-    named-regexp-groups "^1.0.5"
+    ow "^0.15.1"
     parse-package-name "^0.1.0"
 
 path-exists@^3.0.0:

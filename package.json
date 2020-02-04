@@ -30,7 +30,7 @@
     "dependencies": {
         "@sindresorhus/is": "^1.2.0",
         "chalk": "^3.0.0",
-        "convert-typing-name": "^1.0.1",
+        "convert-typing-name": "^2.0.0",
         "dot-prop": "^5.2.0",
         "execa": "^4.0.0",
         "fetch-nice-package": "^1.0.2",
