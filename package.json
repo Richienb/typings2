@@ -36,7 +36,7 @@
         "fetch-nice-package": "^1.0.2",
         "humanize-list": "^1.0.1",
         "js-yaml": "^3.13.1",
-        "libnpmsearch": "^2.0.2",
+        "libnpmsearch": "^3.0.0",
         "lodash": "^4.17.15",
         "pkg-conf": "^3.1.0",
         "remove-markdown": "^0.3.0",
